@@ -1,0 +1,36 @@
+<p>{{pData}}</p>
+
+----------
+<input type="text" #username>
+<button (click)="UpdateDataEvent.emit(username.value)">send data to Parent component</button>
+
+<br>
+<button (click)="GetEmployeeList()">EmployeeList</button>
+<table *ngFor="let item of employees" style="border: 2px black solid;">
+    <tr>
+        <td>{{item.empId}}</td>
+        <td>{{item.empName}}</td>
+        <td>{{item.empCode}}</td>
+        <td>{{item.genderId}}</td>
+        <td>{{item.empDesignation}}</td>
+        <td>{{item.empMgr}}</td>
+        <td>{{item.empSalary}}</td>
+        <td>{{item.empContactNo}}</td>
+        <td>{{item.empEmailId}}</td>
+        <td>{{item.empIsActive}}</td>
+    </tr>
+</table>
+
+<br>
+<input type="text" #empname>
+<button (click)="GetEmployeeByName(empname.value)">Search Employee</button>
+<div>
+<table>
+    <tr>
+        <td>{{employee.empCode}}</td>
+        <td>{{employee.empDesignation}}</td>
+        <td>{{employee.empSalary}}</td>
+        <td>{{employee.empEmailId}}</td>
+    </tr>
+</table>
+</div>
