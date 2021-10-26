@@ -8,7 +8,7 @@ import { Employee } from '../ModelClasses/Employee';
 })
 export class EmployeeDetailsService {
 
-  url: any = "https://localhost:44390/api/Home";
+  url: any = "http://localhost:50000/api/Welcome";
   constructor(private http:HttpClient) 
   {
 

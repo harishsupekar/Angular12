@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output,EventEmitter} from '@angular/core';
-import { Employee } from '../ModelClasses/Employee';
-import {EmployeeDetailsService} from '../Service/employee-details.service';
+//import { Employee } from '../ModelClasses/Employee';
+import {EmployeeDetailsService} from '../../Service/employee-details.service';
 
 @Component({
   selector: 'app-child-component',
