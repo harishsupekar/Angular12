@@ -1,12 +1,19 @@
 <p>sign-in works!</p>
 
+get call response: {{intData}}
+<br><br>
+
 <form class="raw" [formGroup]="userModelForm" (ngSubmit)="Login()">
 
   <label for="username">Username: </label>
-  <input id="username" type="text" formControlName="userName">
+  <input id="username" type="text" formControlName="UserName">
 
   <label for="password">Password: </label>
-  <input id="password" type="text" formControlName="password">
+  <input id="password" type="text" formControlName="Password">
 
   <button class="btn-primary" id="btnLogin" type="submit">Login User</button>
+  <br><br>
+  response token: {{userObj.token}}
 </form>
+
+

@@ -16,16 +16,14 @@ import { User } from 'src/ModelClasses/User';
     constructor(private http:HttpClient) 
     {
     }
-
-    AuthenticateUser(userModel: UserModel):Observable<any>
+    GetData():Observable<any>
     {
-      //Access-Control-Allow-Origin: *
+      return  this.http.get<any>(this.url + '/GetIntData');
+    }
 
-      debugger;
-      const body = { data: userModel };
-      const headers = { 'Access-Control-Allow-Origin': '*'};
-      
-      return  this.http.get<any>(this.url + '/Get');
-      return  this.http.post<any>(this.url + '/Authenticate', body, {headers});
+    AuthenticateUser(userModel: UserModel):Observable<User>
+    {
+      const headers = { 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'};
+      return this.http.post<User>(this.url + '/Authenticate', userModel, {headers});
     }
   }

@@ -11,30 +11,31 @@ import {AuthenticationService} from '../../Service/Authentication-service';
 })
 export class SignInComponent implements OnInit 
 {
-  userData: any = "";
-
+  intData: any= "";
+  userObj = new User();
+  
   userModelForm = new FormGroup
   ({
-    userName: new FormControl(''),
-    password: new FormControl('')
+    UserName: new FormControl(''),
+    Password: new FormControl('')
   });
 
-  ngOnInit(): void 
-  {
-    console.warn("sign upm called!!");
-  }
-  
   constructor(public authenticate : AuthenticationService) 
   {
     console.warn("Sign-In Constructor called!");
   }
 
+  ngOnInit(): void 
+  {
+    this.authenticate.GetData().subscribe((a)=>this.intData = a);
+  }
+ 
   Login():void
   {
     debugger;
     console.warn(this.userModelForm.value);
-    this.authenticate.AuthenticateUser(this.userModelForm.value).subscribe((data)=>this.userData = data);
-    console.warn(this.userData);
+    this.authenticate.AuthenticateUser(this.userModelForm.value).subscribe((data)=>this.userObj = data);
+    console.warn(this.userObj.token);
   }
 
 }
