@@ -7,7 +7,7 @@ import {AuthenticationService} from '../../Service/Authentication-service';
 @Component({
   selector: 'sign-in',
   templateUrl: './sign-in.component.html',
-  styleUrls: ['./sign-in.component.sass']
+  styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent implements OnInit 
 {
@@ -32,7 +32,7 @@ export class SignInComponent implements OnInit
  
   Login():void
   {
-    debugger;
+    //debugger;
     console.warn(this.userModelForm.value);
     this.authenticate.AuthenticateUser(this.userModelForm.value).subscribe((data)=>this.userObj = data);
     console.warn(this.userObj.token);
