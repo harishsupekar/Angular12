@@ -85,4 +85,4 @@ MatToolbarModule
     materialComponent
   ]
 })
-export class MaterialModuleModule { }
+export class MaterialModule { }

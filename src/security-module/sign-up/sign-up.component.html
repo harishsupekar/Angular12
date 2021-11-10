@@ -1,1 +1,38 @@
-<p>sign-up works!</p>
+
+<form [formGroup]="SignUpFormGroup" class="SignUpForm">
+
+    <div class="form-group">
+        <label class="form-lable" for="firstName">First Name: </label>
+        <input formControlName="firstName" id="firstName" type="text" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label class="form-lable" for="lastName">Last name: </label>
+        <input formControlName="lastName" id="lastName" type="text" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label class="form-lable" for="userName">User Name: </label>
+        <input formControlName="userName" id="userName" type="text" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label class="form-lable" for="password">Password: </label>
+        <input formControlName="password" id="password" type="text" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label class="form-lable" for="confirmPassword">Confirm Password: </label>
+        <input formControlName="confirmPassword" id="confirmPassword" type="text" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label class="form-lable" for="emailId">Email Id: </label>
+        <input formControlName="emailId" id="emailId" type="text" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label class="form-lable" for="DOB">Date of birth: </label>
+        <input formControlName="DOB" id="DOB" type="text" class="form-control">
+    </div>
+</form>

@@ -5,14 +5,19 @@ import { SignUpComponent } from '../security-module/sign-up/sign-up.component';
 
 const securityRoutes: Routes = 
 [
-    {path:"Sign-In", component:SignInComponent},
-    {path:"Register-User", component:SignUpComponent}
+    {path:'signin', component:SignInComponent},
+    {path:'signup', component:SignUpComponent},
+    { path: '**', redirectTo: 'signin' }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(securityRoutes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { 
- //name = "Harish";
+export class SecurityRoutingModule 
+{ 
+  public constructor()
+  {
+    console.warn("SecurityRoutingModule constructor called!");
+  }
 }

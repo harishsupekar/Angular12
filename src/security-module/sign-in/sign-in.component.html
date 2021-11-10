@@ -1,7 +1,4 @@
-<p>sign-in works!</p>
-
-get call response: {{intData}}
-<br><br>
+<!-- get call response: {{intData}} -->
 
 <form class="form col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12" [formGroup]="userModelForm" (ngSubmit)="Login()">
 
@@ -12,11 +9,13 @@ get call response: {{intData}}
 
   <div class="form-group">
     <label class="form-label" for="password">Password: </label>
-    <input class="form-control textbox" id="password" tabindex="2" type="text" formControlName="Password">
+    <input class="form-control textbox" id="password" tabindex="2" type="password" formControlName="Password">
   </div>
 
   <div class="form-group mt-4">
     <button class="btn textbox btn-primary" id="btnLogin" type="submit">Login</button>
+    &nbsp; &nbsp; &nbsp; &nbsp;
+    <a routerLink="/signup">Sign-Up</a>
     <div class="form-label token-class" *ngIf="userObj.token!=''"> 
       response token: {{userObj.token}}
     </div>
