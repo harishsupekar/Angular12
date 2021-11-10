@@ -3,16 +3,25 @@
 get call response: {{intData}}
 <br><br>
 
-<form class="raw" [formGroup]="userModelForm" (ngSubmit)="Login()">
+<form class="form col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12" [formGroup]="userModelForm" (ngSubmit)="Login()">
 
-  <label for="username">Username: </label>
-  <input class="textbox" id="username" type="text" formControlName="UserName">
+  <div class="form-group">
+    <label class="form-label" for="username">Username: </label>
+    <input class="form-control textbox" id="username" tabindex="1" type="text" formControlName="UserName">
+  </div>
 
-  <label for="password">Password: </label>
-  <input class="textbox" id="password" type="text" formControlName="Password">
+  <div class="form-group">
+    <label class="form-label" for="password">Password: </label>
+    <input class="form-control textbox" id="password" tabindex="2" type="text" formControlName="Password">
+  </div>
 
-  <button class="btn-primary" id="btnLogin" type="submit">Login User</button>
-  response token: {{userObj.token}}
+  <div class="form-group mt-4">
+    <button class="btn textbox btn-primary" id="btnLogin" type="submit">Login</button>
+    <div class="form-label token-class" *ngIf="userObj.token!=''"> 
+      response token: {{userObj.token}}
+    </div>
+  </div>
+
 </form>
 
 

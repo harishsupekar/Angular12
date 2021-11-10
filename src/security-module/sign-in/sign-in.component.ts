@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { UserModel } from '../../ModelClasses/UserModel';
 import { User } from 'src/ModelClasses/User';
 import {AuthenticationService} from '../../Service/Authentication-service';
+import { catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'sign-in',
@@ -12,8 +13,9 @@ import {AuthenticationService} from '../../Service/Authentication-service';
 export class SignInComponent implements OnInit 
 {
   intData: any= "";
+  errorMessage: string = ""; 
   userObj = new User();
-  
+
   userModelForm = new FormGroup
   ({
     UserName: new FormControl(''),
@@ -30,9 +32,9 @@ export class SignInComponent implements OnInit
     this.authenticate.GetData().subscribe((a)=>this.intData = a);
   }
  
-  Login():void
+  Login()
   {
-    //debugger;
+    this.userObj.token = "";
     console.warn(this.userModelForm.value);
     this.authenticate.AuthenticateUser(this.userModelForm.value).subscribe((data)=>this.userObj = data);
     console.warn(this.userObj.token);
