@@ -18,12 +18,12 @@
 
     <div class="form-group">
         <label class="form-lable" for="password">Password: </label>
-        <input formControlName="password" id="password" type="text" class="form-control">
+        <input formControlName="password" id="password" type="password" class="form-control">
     </div>
 
     <div class="form-group">
         <label class="form-lable" for="confirmPassword">Confirm Password: </label>
-        <input formControlName="confirmPassword" id="confirmPassword" type="text" class="form-control">
+        <input formControlName="confirmPassword" id="confirmPassword" type="password" class="form-control">
     </div>
 
     <div class="form-group">
@@ -34,5 +34,11 @@
     <div class="form-group">
         <label class="form-lable" for="DOB">Date of birth: </label>
         <input formControlName="DOB" id="DOB" type="text" class="form-control">
+    </div>
+
+    <div class="form-group mt-3">
+        <button class="form-control" [disabled]="!SignUpFormGroup.valid" type="submit" id="btnSubmit" class="btn btn-primary"> Register </button>
+        &nbsp;
+        <button class="form-control" type="reset" id="btnClear" class="btn btn-primary"> Clear </button>
     </div>
 </form>

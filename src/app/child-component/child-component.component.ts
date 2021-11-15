@@ -34,6 +34,4 @@ export class ChildComponentComponent implements OnInit {
   @Input() pData: number[] = [];
   ngOnInit(): void {
   }
-
-
 }
