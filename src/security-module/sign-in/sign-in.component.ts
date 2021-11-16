@@ -41,8 +41,8 @@ export class SignInComponent implements OnInit
     this.userObj.token = "";
     console.warn(this.userModelForm.value);
     this.authenticate.AuthenticateUser(this.userModelForm.value).subscribe((data)=>this.userObj = data);
-    console.warn(this.userObj.token);
-    this._router.navigateByUrl("../dashboard-admin");
+    //console.warn(this.userObj.token);
+    this._router.navigate(['/dashboard-admin']);
   }
 
 }

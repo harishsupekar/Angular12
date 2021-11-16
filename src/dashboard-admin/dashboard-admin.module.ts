@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
+import {DashboardAdminRoutingModule } from './dashboard-admin-routing.module'
 
 import { NavigationTopComponent } from './navigation-top/navigation-top.component';
 import { NavigationLeftComponent } from './navigation-left/navigation-left.component';
@@ -15,11 +16,12 @@ import { DashboardFooterComponent } from './dashboard-footer/dashboard-footer.co
     UserListComponent,
     DashboardFooterComponent
   ],
-  imports: [
+  imports: 
+  [
     CommonModule,
-    Router
+    Router,
+    RouterModule,
+    DashboardAdminRoutingModule
   ]
 })
 export class DashboardAdminModule { }
-
-

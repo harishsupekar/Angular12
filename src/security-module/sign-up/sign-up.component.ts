@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, EmailValidator } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 @Component({
   selector: 'sign-up',
@@ -13,8 +13,9 @@ export class SignUpComponent implements OnInit {
     console.warn("SignUpComponent Constructor loaded!");
   }
   
-  SignUpFormGroup = this.fb.group({
-    firstName: ['', Validators.required],
+  SignUpFormGroup = this.fb.group
+  ({
+    firstName: ['', [Validators.required]],
     lastName: ['', Validators.required],
     userName: ['', Validators.required],
     password: ['', Validators.required],
